@@ -1,0 +1,30 @@
+# Build directories
+/build/
+out/
+bin/
+
+# Compiled binaries
+*.bin
+*.elf
+*.o
+*.obj
+*.exe
+
+# Disk images
+*.img
+*.iso
+*.flp
+
+# Assembly listings
+*.lst
+*.map
+
+# Logs
+*.log
+*.err
+
+# Editor / system files
+*.swp
+*~
+.DS_Store
+Thumbs.db
