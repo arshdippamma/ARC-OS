@@ -1,6 +1,6 @@
 # 🖥️ ARC-OS
 
-A hobby operating system built with **C (Open Watcom)** and **Assembly (NASM)**.  
+A hobby operating system built with **C (Open Watcom)** and **x86 Assembly (NASM)**.  
 The project is a personal learning journey into OS development, starting from a custom bootloader and moving toward a working kernel with basic drivers and system functionality.
 
 ---
@@ -17,7 +17,7 @@ The project is a personal learning journey into OS development, starting from a 
 - **Stage 2 Bootloader (partial)** – extended loading logic and setup groundwork  
 - **Custom `printf` implementation** – supports formatted printing to screen  
 - **Division routine** implemented to enable `printf` integer formatting  
-- Basic console output (`Hello world from C!`) through BIOS interrupts  
+- Basic console output (`Hello world from C!`) through BIOS interrupts and `printf`
 
 ---
 
@@ -36,8 +36,8 @@ This is an active project — features will continue to be added incrementally.
 
 ## 🧱 Tech Stack
 
-- **NASM** – assembler for stage 1 bootloader  
-- **Open Watcom C** – kernel and higher-level code  
+- **x86 Assembly (NASM)** - bootloader and low-level routines
+- **C (Open Watcom)** – kernel and higher-level code  
 - **GNU Make** – build automation  
 - **QEMU** / **Bochs** – emulators for testing  
 
@@ -59,8 +59,8 @@ Make sure you have installed:
 - `nasm`
 - `make`
 - **Open Watcom**
-- `qemu-system-i386`
-- `bochs` (optional - used for debugging)
+- `qemu-system-i386` for testing
+- `bochs-x bochsbios vgabios` for debugging
 
 ### 3. Build and Run
 
@@ -106,12 +106,13 @@ ARC-OS/
 
 ## 📚 Resources
 
-- [OSDev Wiki]()
-- [Open Watcom Documentation]()
-- [Ralf Brown's Interrup List]()
-- [Philipp Oppermann's Blog]()
-- [QEMU Documentation]()
-- [Bochs Documentation]()
+- [OSDev Wiki](https://wiki.osdev.org/Expanded_Main_Page)
+- [Open Watcom Documentation](https://open-watcom.github.io/open-watcom-v2-wikidocs/ctools.pdf)
+- [Ralf Brown's Interrup List](https://www.ctyme.com/rbrown.htm)
+- [Philipp Oppermann's Blog](https://os.phil-opp.com/)
+- [QEMU Documentation](https://www.qemu.org/docs/master/)
+- [Bochs Documentation](https://bochs.sourceforge.io/doc/docbook/)
+- [nanobyte OS development YouTube series](https://www.youtube.com/playlist?list=PLFjM7v6KGMpiH2G-kT781ByCNC_0pKpPN)
 
 ## 📄 License
 
@@ -119,3 +120,7 @@ MIT License. Feel free to modify, improve, and share.
 
 ## 🙌 Acknowledgments
 
+- OSDev Wiki
+- Open Watcom contributors
+- QEMU/Bochs team for emulation and debugging tools
+- nanobyte YouTube channel
