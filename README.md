@@ -54,13 +54,32 @@ cd ARC-OS
 
 ### 2. Install prerequisites
 
-Make sure you have installed:
+Run the following in bash:
 
-- `nasm`
-- `make`
-- **Open Watcom**
-- `qemu-system-i386` for testing
-- `bochs-x bochsbios vgabios` for debugging
+```
+sudo apt update
+sudo apt install -y build-essential nasm qemu-system-x86 dosfstools mtools
+
+# Optional (used for debugging with Bochs)
+sudo apt install bochs bochs-x vgabios 
+
+# Get asset URL for ow-snapshot.tar.xz from OpenWatcom V2 GitHub Releases page
+cd /tmp
+curl -L -o ow-snapshot.tar.xz "https://github.com/open-watcom/open-watcom-v2/releases/download/2025-07-01-Build/ow-snapshot.tar.xz"
+
+# Install
+sudo mkdir -p /opt/openwatcom
+sudo tar -xf ow-snapshot.tar.xz -C /opt/openwatcom --strip-components=1
+
+# Env
+echo 'export WATCOM=/opt/openwatcom' >> ~/.bashrc
+echo 'export PATH=$WATCOM/binl:$PATH' >> ~/.bashrc
+echo 'export EDPATH=$WATCOM/eddat' >> ~/.bashrc
+echo 'export INCLUDE=$WATCOM/h' >> ~/.bashrc
+source ~/.bashrc
+```
+
+Note that future versions of Open Watcom C should also be compatible with this build.
 
 ### 3. Build and Run
 
